@@ -1,0 +1,15 @@
+[server]
+host = "0.0.0.0"
+port = 8080
+name = "An unnamed server"
+
+[server.optimization]
+gridBoundWidth = 8192
+gridBoundheight = 8192
+gridRegionSize = 64
+targetTPS = 25
+
+[player]
+startMass = 128
+minMass = 24
+maxMass = 16_384
