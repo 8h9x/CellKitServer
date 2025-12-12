@@ -22,7 +22,7 @@ func (g *SpatialGrid) Insert(coords Vector2D, entity any) {
 
 	bucket, exists := g.Buckets[key]
 	if !exists {
-		bucket = make(map[any]struct{}, 8) // init with a bit of length to ideally help bursty areas
+		bucket = make(map[any]struct{}, 8) // init with a bit of length to ideally reduce repetitive resizing when a region has bursty inserts
 		g.Buckets[key] = bucket
 	}
 
