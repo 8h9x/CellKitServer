@@ -2,6 +2,7 @@ package game
 
 import (
 	"fmt"
+	"github.com/gobwas/ws"
 	"image/color"
 	"log"
 	"math/rand"
@@ -124,7 +125,7 @@ func (g *Game) OnWebsocketMessage(conn net.Conn, payload []byte) {
 	}
 }
 
-func (g *Game) OnWebsocketClose(conn net.Conn) {
+func (g *Game) OnWebsocketClose(conn net.Conn, code ws.StatusCode) {
 	delete(g.Sockets, conn)
 }
 
