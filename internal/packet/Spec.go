@@ -43,12 +43,12 @@ type ClearAllNodes struct{}
 
 type ClearMyNodes struct{}
 
-// Drawn from all player cells to position
+// DrawLine Drawn from all player cells to position
 type DrawLine struct {
 	X, Y uint16 // ?? why uint??
 }
 
-// Nodes added by this packet are centered on the client's camera.
+// AddNode Nodes added by this packet are centered on the client's camera.
 type AddNode struct {
 	NodeID uint32
 }

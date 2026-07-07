@@ -14,7 +14,7 @@ import (
 	"github.com/cellkit/server/internal/packet"
 )
 
-const TARGET_TPS = 25
+const TargetTPS = 25
 
 type Game struct {
 	Grid      *geometry.SpatialGrid
@@ -39,7 +39,7 @@ func (g *Game) Tick() {
 		g.Grid.Insert(cell.GetPosition(), cell)
 	}
 
-	if (g.tickCount+7)%TARGET_TPS == 0 {
+	if (g.tickCount+7)%TargetTPS == 0 {
 		records := make([]packet.LeaderboardRecord, 0)
 		for _, socket := range g.Sockets {
 			nickname := socket.GetNickname()
@@ -63,7 +63,7 @@ func (g *Game) Tick() {
 
 func (g *Game) StartLoop() {
 	g.tickCount = 0
-	ticker := time.NewTicker(time.Second / time.Duration(TARGET_TPS))
+	ticker := time.NewTicker(time.Second / time.Duration(TargetTPS))
 
 	go func() {
 		for {

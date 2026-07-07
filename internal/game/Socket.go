@@ -15,9 +15,9 @@ import (
 )
 
 const (
-	PLAYER_START_MASS            uint32 = 780
-	MOCK_RANDOM_START_POSITION_X int32  = 43
-	MOCK_RANDOM_START_POSITION_Y int32  = 456
+	PlayerStartMass uint32         = 780
+	MockRandomStartPositionX int32 = 43
+	MockRandomStartPositionY int32 = 456
 )
 
 type Socket struct {
@@ -58,10 +58,10 @@ func (s *Socket) OnSpawn(nickname string) {
 	s.Color = randomColor()
 
 	playerCell := &entity.PlayerCell{}
-	playerCell.SetMass(PLAYER_START_MASS)
+	playerCell.SetMass(PlayerStartMass)
 	playerCell.SetPosition(geometry.Vector2D{
-		X: MOCK_RANDOM_START_POSITION_X,
-		Y: MOCK_RANDOM_START_POSITION_Y,
+		X: MockRandomStartPositionX,
+		Y: MockRandomStartPositionY,
 	})
 	playerCell.SetColor(s.Color)
 
